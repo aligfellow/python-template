@@ -1,0 +1,138 @@
+> **Template setup — delete this section once your project is ready.**
+>
+> ### Using this template
+>
+> **With copier (recommended)** — auto-populates project name, author, etc:
+>
+> ```bash
+> uv tool install copier
+> copier copy gh:{{ github_user }}/python-template my-new-project
+> cd my-new-project
+> just setup && just check
+> ```
+>
+> **As a GitHub template** — plain file copy, rename manually:
+>
+> 1. Click **"Use this template"** on the GitHub repo page, or:
+>    ```bash
+>    gh repo create my-new-project --template {{ github_user }}/python-template --public --clone
+>    ```
+> 2. Rename `src/{{ package_name }}/` to your package name
+> 3. Update `name`, `description`, `authors`, and `homepage` in `pyproject.toml`
+> 4. Update `source` in `[tool.coverage.run]` to match your package name
+> 5. Update `LICENSE` with your name and year
+>
+> ### Updating from the template
+>
+> ```bash
+> copier update
+> ```
+>
+> Re-applies template changes while preserving your project-specific modifications.
+
+---
+
+# {{ project_name }}
+
+{{ description }}
+
+## Installation
+
+From PyPI:
+
+```bash
+pip install {{ project_name }}
+```
+
+Or with [uv](https://docs.astral.sh/uv/):
+
+```bash
+uv add {{ project_name }}
+```
+
+From source:
+
+```bash
+git clone https://github.com/{{ github_user }}/{{ project_name }}.git
+cd {{ project_name }}
+pip install .
+# or for an editable install:
+pip install -e .
+```
+{% if include_cli %}
+
+## Usage
+
+```bash
+{{ project_name }}
+```
+{% else %}
+
+## Usage
+
+```python
+import {{ package_name }}
+```
+{% endif %}
+
+## Development
+
+Requires [uv](https://docs.astral.sh/uv/) and [just](https://github.com/casey/just).
+
+```bash
+git clone https://github.com/{{ github_user }}/{{ project_name }}.git
+cd {{ project_name }}
+just setup   # install dev dependencies
+just check   # lint + type-check + tests
+```
+
+| Command | Description |
+|---|---|
+| `just check` | Run lint + type-check + tests |
+| `just lint` | Format and lint with ruff |
+| `just type` | Type-check with ty |
+| `just test` | Run pytest with coverage |
+| `just fix` | Auto-fix lint issues |
+| `just build` | Build distribution |
+| `just setup` | Install all dev dependencies |
+
+### CI
+
+GitHub Actions runs lint, type-check, and tests on every push to `main` and every PR targeting `main`. Coverage is uploaded to [Codecov](https://codecov.io).
+
+For private repos, add your `CODECOV_TOKEN` as a repository secret under **Settings > Secrets and variables > Actions**. Public repos work without the token.
+
+### Changing the license
+
+This project defaults to the [MIT License](LICENSE). To change it, replace the `LICENSE` file and update the classifier in `pyproject.toml` (e.g. `"License :: OSI Approved :: Apache Software License"`).
+
+## License
+
+[MIT](LICENSE)
+
+## Acknowledgements
+
+Generated from [python-template](https://github.com/{{ github_user }}/python-template).
+
+<details>
+<summary>Updating from the template</summary>
+
+If this project was created with [copier](https://copier.readthedocs.io/), you can pull in upstream template improvements:
+
+```bash
+# Run from the project root
+copier update
+```
+
+This will:
+
+1. Fetch the latest version of the template
+2. Re-ask any questions whose defaults have changed
+3. Re-render the templated files with your existing answers
+4. Apply the changes as a diff — your project-specific edits are preserved via a three-way merge
+
+If there are conflicts (e.g. you modified the `justfile` and so did the template), copier will leave standard merge conflict markers (`<<<<<<<` / `>>>>>>>`) for you to resolve manually.
+
+Requires that the project was originally created with `copier copy`, not the plain GitHub "Use this template" button.
+
+</details>

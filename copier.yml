@@ -1,0 +1,45 @@
+_min_copier_version: "9.0.0"
+
+project_name:
+  type: str
+  help: "Project name (e.g. my-cool-lib)"
+
+package_name:
+  type: str
+  help: "Python package name (e.g. my_cool_lib)"
+  default: "{{ project_name | replace('-', '_') | lower }}"
+
+description:
+  type: str
+  help: "One-line project description"
+  default: ""
+
+author:
+  type: str
+  help: "Author name"
+  default: "Dr Alister Goodfellow"
+
+github_user:
+  type: str
+  help: "GitHub username or org"
+  default: "aligfellow"
+
+year:
+  type: str
+  help: "Copyright year"
+  default: "2026"
+
+python_version:
+  type: str
+  help: "Minimum Python version"
+  default: "3.10"
+
+ci_python_version:
+  type: str
+  help: "Python version for CI"
+  default: "3.14"
+
+include_cli:
+  type: bool
+  help: "Include a CLI entry point?"
+  default: false

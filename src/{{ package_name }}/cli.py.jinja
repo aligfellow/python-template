@@ -1,0 +1,13 @@
+"""Command-line interface for {{ project_name }}."""
+
+import argparse
+
+
+def main() -> None:
+    """Entry point for the CLI."""
+    parser = argparse.ArgumentParser(description="{{ description }}")
+    parser.parse_args()
+
+
+if __name__ == "__main__":
+    main()
