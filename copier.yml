@@ -45,3 +45,11 @@ include_cli:
   default: false
 
 _subdirectory: project
+
+_tasks:
+  - command: "git init"
+    when: "{{ _copier_operation == 'copy' }}"
+  - command: "git add ."
+    when: "{{ _copier_operation == 'copy' }}"
+  - command: "git commit -m 'Initial commit from copier template'"
+    when: "{{ _copier_operation == 'copy' }}"
