@@ -59,7 +59,6 @@ select = [
     "RUF",    # Ruff-specific rules
     "RSE",    # flake8-raise
     "ICN001", # unconventional-import-alias
-    "PLR2004", # Magic numbers
 ]
 ignore = [
     "PLR0911", # Too many returns
@@ -69,6 +68,9 @@ ignore = [
     "PLR0915", # Too many statements
     "PLR1702", # Too many nested-blocks
     "PLC0415", # Local imports which may be performance related
+{%- if not check_magic_numbers %}
+    "PLR2004", # Magic numbers
+{%- endif %}
 ]
 
 [tool.ruff.lint.per-file-ignores]

@@ -49,6 +49,11 @@ include_citation:
   help: "Include a CITATION.cff?"
   default: true
 
+check_magic_numbers:
+  type: bool
+  help: "Enforce no magic numbers (PLR2004)? Disable for legacy codebases."
+  default: true
+
 _subdirectory: project
 
 _tasks:
