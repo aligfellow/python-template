@@ -87,7 +87,7 @@ If this project was created with [copier](https://copier.readthedocs.io/), you c
 
 ```bash
 # Run from the project root
-copier update
+copier update --trust
 ```
 
 This will:
@@ -98,6 +98,8 @@ This will:
 4. Apply the changes as a diff — your project-specific edits are preserved via a three-way merge
 
 If there are conflicts (e.g. you modified the `justfile` and so did the template), copier will leave standard merge conflict markers (`<<<<<<<` / `>>>>>>>`) for you to resolve manually.
+
+The `--trust` flag is required because the template defines tasks (used for `git init` on first copy). The tasks don't run during update, but copier requires trust for any template that declares them.
 
 Requires that the project was originally created with `copier copy`, not the plain GitHub "Use this template" button.
 

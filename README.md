@@ -22,10 +22,12 @@ Auto-populates project name, author, package name, etc:
 
 ```bash
 uv tool install copier
-copier copy gh:aligfellow/python-template my-new-project
+copier copy --trust gh:aligfellow/python-template my-new-project
 cd my-new-project
 just setup && just check
 ```
+
+The `--trust` flag is required because the template runs `git init` and creates an initial commit automatically.
 
 ### As a GitHub template
 
@@ -79,8 +81,10 @@ my-new-project/
 If a project was created with `copier copy`, pull in template improvements with:
 
 ```bash
-copier update
+copier update --trust
 ```
+
+`--trust` is required because the template defines tasks (used for `git init` on first copy). The tasks don't run during update, but copier requires trust for any template that declares them.
 
 ## Codecov setup
 
