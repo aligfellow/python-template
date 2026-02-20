@@ -1,37 +1,3 @@
-> **Template setup — delete this section once your project is ready.**
->
-> ### Using this template
->
-> **With copier (recommended)** — auto-populates project name, author, etc:
->
-> ```bash
-> uv tool install copier
-> copier copy gh:{{ github_user }}/python-template my-new-project
-> cd my-new-project
-> just setup && just check
-> ```
->
-> **As a GitHub template** — plain file copy, rename manually:
->
-> 1. Click **"Use this template"** on the GitHub repo page, or:
->    ```bash
->    gh repo create my-new-project --template {{ github_user }}/python-template --public --clone
->    ```
-> 2. Rename `src/{{ package_name }}/` to your package name
-> 3. Update `name`, `description`, `authors`, and `homepage` in `pyproject.toml`
-> 4. Update `source` in `[tool.coverage.run]` to match your package name
-> 5. Update `LICENSE` with your name and year
->
-> ### Updating from the template
->
-> ```bash
-> copier update
-> ```
->
-> Re-applies template changes while preserving your project-specific modifications.
-
----
-
 # {{ project_name }}
 
 {{ description }}
