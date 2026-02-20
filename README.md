@@ -29,6 +29,19 @@ just setup && just check
 
 The `--trust` flag is required because the template runs `git init` and creates an initial commit automatically.
 
+Then create a GitHub repo and push:
+
+```bash
+gh repo create my-new-project --public --source=. --push
+```
+
+Or if you prefer to create the repo on GitHub first:
+
+```bash
+git remote add origin git@github.com:your-user/my-new-project.git
+git push -u origin main
+```
+
 ### As a GitHub template
 
 Plain file copy — you rename things manually:
