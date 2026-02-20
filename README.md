@@ -12,6 +12,7 @@ Copier template for Python projects with uv, ruff, ty, pytest, just, and GitHub 
 | [ty](https://docs.astral.sh/ty/) | Type checking |
 | [pytest](https://docs.pytest.org/) | Testing with coverage |
 | [GitHub Actions](.github/workflows/ci.yml.jinja) | CI on push/PR to main |
+| [pre-commit](https://pre-commit.com/) | Git hooks for ruff + ty on commit |
 | [Codecov](https://codecov.io) | Coverage reporting |
 
 ## Usage
@@ -70,6 +71,8 @@ my-new-project/
 │   └── ci.yml
 ├── pyproject.toml           # ruff, ty, pytest, coverage config
 ├── justfile                 # check/lint/type/test/fix/build/setup
+├── .pre-commit-config.yaml  # ruff on commit
+├── CITATION.cff             # if include_citation=true
 ├── .gitignore
 ├── LICENSE
 └── README.md
@@ -88,6 +91,7 @@ my-new-project/
 | `python_version` | 3.10 |
 | `ci_python_version` | 3.14 |
 | `include_cli` | false |
+| `include_citation` | false |
 
 ## Updating existing projects
 

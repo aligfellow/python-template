@@ -42,7 +42,12 @@ ci_python_version:
 include_cli:
   type: bool
   help: "Include a CLI entry point?"
-  default: false
+  default: true
+
+include_citation:
+  type: bool
+  help: "Include a CITATION.cff?"
+  default: true
 
 _subdirectory: project
 
