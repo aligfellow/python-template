@@ -44,5 +44,4 @@ include_cli:
   help: "Include a CLI entry point?"
   default: false
 
-_exclude:
-  - README.md
+_subdirectory: project
