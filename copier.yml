@@ -17,7 +17,7 @@ description:
 author:
   type: str
   help: "Author name"
-  default: "Dr Alister S. Goodfellow"
+  default: "Alister S. Goodfellow"
 
 github_user:
   type: str
