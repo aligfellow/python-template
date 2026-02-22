@@ -105,7 +105,7 @@ copier update --trust
 
 ## Codecov setup
 
-For private repos, add a `CODECOV_TOKEN` secret under **Settings > Secrets and variables > Actions**. Public repos work without it.
+For repo, go to codecov.io and activate the repository under **Configuration > General**. Copy the `CODECOV_TOKEN` and add as a repository secret under **Settings > Secrets and variables > Actions**, naming the secret `CODECOV_TOKEN`.
 
 ## License
 
