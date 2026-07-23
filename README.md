@@ -85,10 +85,10 @@ my-new-project/
 | `project_name` | — |
 | `package_name` | derived from project name |
 | `description` | — |
-| `author` | Dr Alister Goodfellow |
+| `author` | Alister S. Goodfellow |
 | `github_user` | aligfellow |
 | `year` | 2026 |
-| `python_version` | 3.10 |
+| `python_version` | 3.12 |
 | `ci_python_version` | 3.14 |
 | `include_cli` | false |
 | `include_citation` | false |
